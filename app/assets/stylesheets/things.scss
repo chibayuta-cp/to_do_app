@@ -1,0 +1,34 @@
+// Place all the styles related to the things controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+// index-----------------------------------------------
+.main {
+  position: absolute;
+  top: 64px;
+  width: 100%;
+  height: 100%;
+  background-image: url("/top_image.JPG");
+}
+
+.text-config {
+  color: white;
+  margin-top: 200px;
+  text-align: center;
+}
+
+.btn-margin {
+  margin: 50px;
+}
+
+.main h1 {
+  font-size: 50px;
+}
+
+// _form -----------------------------------------
+.main-form {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 32px;
+}

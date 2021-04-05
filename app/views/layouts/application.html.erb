@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ToDoApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <div class="header-bar">
+      <% if user_signed_in? %>
+        <!-- ログイン時 -->
+        <%= link_to "トップ", things_path, class: "btn btn-outline-primary" %>
+        <%= link_to 'ToDo追加', new_thing_path, class: "btn btn-outline-primary" %>
+        <%= link_to "マイページへ", users_path, class: "btn btn-outline-primary" %>
+        <%= link_to "アカウント編集", edit_user_registration_path, class: "btn btn btn-outline-primary"  %>
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" }, class: "btn btn-outline-primary" %>
+      <% else %>
+        <!-- 非ログイン時 -->
+        <%= link_to "ログイン", new_user_session_path, class: "btn btn-outline-primary"  %>
+        <%= link_to "アカウント登録", new_user_registration_path, class: "btn btn-outline-primary"  %>
+      <% end %>
+    </div>
+    <%= yield %>
+  </body>
+</html>

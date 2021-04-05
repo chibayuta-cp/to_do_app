@@ -1,0 +1,14 @@
+<h1><i class="fas fa-th-list"></i> ToDoリスト</h1>
+<div class="font-size">
+  <% @things.each do |thing| %>
+    <ul>
+      <li> <strong><%= thing.content %></strong>
+        <%= link_to "編集", edit_thing_path(thing), class: "btn btn-outline-success"  %>
+        <%= link_to "削除", thing_path(thing), method: :delete, data: { confirm: "削除しますか？" }, class: "btn btn-outline-danger" %>
+      </li>
+    </ul>
+  <% end %>
+</div>
+<div>
+  <%= render "detail" %>
+</div>

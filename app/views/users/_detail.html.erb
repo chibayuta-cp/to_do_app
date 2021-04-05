@@ -1,0 +1,8 @@
+<%= month_calendar events: @things do |date, things| %>
+  <%= date.day %>
+  <% things.each do |thing| %>
+    <div>
+      <%= check_box_tag :thing %><%= label_tag :thing, thing.content %>
+    </div>
+  <% end %>
+<% end %>
